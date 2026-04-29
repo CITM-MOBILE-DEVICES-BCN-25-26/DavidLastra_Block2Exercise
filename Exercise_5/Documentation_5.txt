@@ -12,6 +12,7 @@ a chain of ifs and else. The issue remains the same then which is that the class
 of reward is added to the game, which breaks the Open/Closed principle and also RewardSystem manages the selection of the reward and the 
 logic of each individual reward inside, breaking the SRP too.
 
+
 Justification of the refactor
 
 The process of the refactor will be the same as in exercise 2, which will involve the creation of an interface called IReward with the
