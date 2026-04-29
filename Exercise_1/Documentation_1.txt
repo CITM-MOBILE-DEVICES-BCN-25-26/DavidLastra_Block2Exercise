@@ -14,4 +14,6 @@ to the program, it would require editing the MatchSummary class, which would bre
 
 Justification of the refactor
 
-By separating MatchSummary into 5 different classes, one for each different function that the code has, we manage to make it so that every single class now has one single responsibility and by creating the interface IMatchSummaryExporter, which has a method Export that every class that inherits will need to use, the code now can add as many exporters as it wants without having the need to modify any existing code.
+By separating MatchSummary into 5 different classes, one for each different function that the code has, we manage to make it so that every 
+single class now has one single responsibility and by creating the interface IMatchSummaryExporter, which has a method Export that every 
+class that inherits will need to use, the code now can add as many exporters as it wants without having the need to modify any existing code.
