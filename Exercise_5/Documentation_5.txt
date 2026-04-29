@@ -7,9 +7,14 @@ Single Responsibility Principle
 
 Design Problem
 
-The issue in this exercise is the same as in Exercise 2 but this time instead of having a switch with the different cases, now we have a chain of ifs and else. The issue remains the same then which is that the class RewardSystem has to be modified every time a new type of reward is added to the game, which breaks the Open/Closed principle and also RewardSystem manages the selection of the reward and the 
+The issue in this exercise is the same as in Exercise 2 but this time instead of having a switch with the different cases, now we have 
+a chain of ifs and else. The issue remains the same then which is that the class RewardSystem has to be modified every time a new type
+of reward is added to the game, which breaks the Open/Closed principle and also RewardSystem manages the selection of the reward and the 
 logic of each individual reward inside, breaking the SRP too.
 
 Justification of the refactor
 
-The process of the refactor will be the same as in exercise 2, which will involve the creation of an interface called IReward with the method GiveReward and each reward class will inherit from it managing its own logic and now RewardSystem will only care about receiving a reward and giving it. This makes that the code can be now open to add new rewards in the game without having to modify the class RewardSystem and each class now will have a single responsibility. 
+The process of the refactor will be the same as in exercise 2, which will involve the creation of an interface called IReward with the
+method GiveReward and each reward class will inherit from it managing its own logic and now RewardSystem will only care about receiving a
+reward and giving it. This makes that the code can be now open to add new rewards in the game without having to modify the class RewardSystem
+and each class now will have a single responsibility. 
