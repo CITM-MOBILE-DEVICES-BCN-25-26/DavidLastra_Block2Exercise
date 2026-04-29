@@ -16,4 +16,6 @@ could appear.
 Justification of the refactor
 
 In order to refactor the code, I have created an interface IMoveable with the method Move inside and now every class that wants to move 
-just needs to inherit from that interface and call the method inside, then the class MovementSystem will be in charge of calling the entities that want to move. This solves the need of having to throw exceptions in the code and by changing in MoveEntity from a GameEntity to an IMoveable, now the script is incapable of calling Move on entities that don’t need to move such as Wall.
+just needs to inherit from that interface and call the method inside, then the class MovementSystem will be in charge of calling the entities
+that want to move. This solves the need of having to throw exceptions in the code and by changing in MoveEntity from a GameEntity to an IMoveable,
+now the script is incapable of calling Move on entities that don’t need to move such as Wall.
