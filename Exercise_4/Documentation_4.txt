@@ -7,13 +7,16 @@ Liskov Substitution Principle
 
 Design Problem
 
-IUIElement is an interface that has 3 methods inside that are forced to be applied in every single class that inherits it, forcing classes like InventoryButton that could not be dragged to implement a function OnDrag or InventoryItemSlot that had to implement a method OnClick even if that class could not use it. This incorrect use of the interface creates a secondary SOLID rule break, which is that in order to 
-use IUIElement in the different classes of the code, these classes need to throw exceptions, which breaks the Liskov Substitution 
-Principle too.
+IUIElement is an interface that has 3 methods inside that are forced to be applied in every single class that inherits it, forcing 
+classes like InventoryButton that could not be dragged to implement a function OnDrag or InventoryItemSlot that had to implement a 
+method OnClick even if that class could not use it. This incorrect use of the interface creates a secondary SOLID rule break, which 
+is that in order to use IUIElement in the different classes of the code, these classes need to throw exceptions, which breaks the Liskov
+Substitution Principle too.
 
 
 Justification of the refactor
 
 In order to refactor the code, I started by creating 3 separate interfaces (IClickable, IHovereable and IDraggable), which each contains 
-one single method that matches the behaviour described, now both of the issues presented in the first code now can be solved as the inheriting classes now don’t need to throw exceptions for functions that do not need to implement in their classes and also respecting 
+one single method that matches the behaviour described, now both of the issues presented in the first code now can be solved as the 
+inheriting classes now don’t need to throw exceptions for functions that do not need to implement in their classes and also respecting 
 the LSP at the same time now.
