@@ -1,0 +1,17 @@
+SOLID Principles Broken
+
+Single Responsibility Principle
+
+Open/Closed Principle
+
+
+Design Problem
+
+The class MatchSummary does 4 different responsibilities in the same class. Compiles data, gets the performance, prints it on the screen 
+and is in charge of exporting it into different formats. This breaks the SRP and if the programer had to integrate another type of export 
+to the program, it would require editing the MatchSummary class, which would break the Open/Closed principle.
+
+
+Justification of the refactor
+
+By separating MatchSummary into 5 different classes, one for each different function that the code has, we manage to make it so that every single class now has one single responsibility and by creating the interface IMatchSummaryExporter, which has a method Export that every class that inherits will need to use, the code now can add as many exporters as it wants without having the need to modify any existing code.
