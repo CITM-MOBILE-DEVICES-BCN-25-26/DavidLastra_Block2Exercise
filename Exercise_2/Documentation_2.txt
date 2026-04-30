@@ -4,12 +4,15 @@ Open/Closed Principle
 
 Single Responsibility Principle
 
+Dependency Inversion Principle
+
 
 Design Problem
 
 The class SkillSystem uses a switch to determine the damage of a skill. This makes that when another skill is going to be implemented in 
 the code, the programmer will need to modify the SkillSystem class, which breaks the Open/Close principle. Also, the class SkillSystem
-breaks the SRP too as it manages the skill selection and the final damage calculations.
+breaks the SRP too as it manages the skill selection and the final damage calculations. Also, the system depends on its entirety on comparissons of strings rather than using interfaces.
+
 
 
 Justification of the refactor
@@ -17,4 +20,5 @@ Justification of the refactor
 In order to refactor the code following the SOLID principles, I have decided to use a base interface ISkill with a single method
 ApplyDamage. Every single skill class will inherit from ISkill and SkillSystem now will only care about receiving a skill and applying 
 the damage. This makes the code open to the implementation of new skills without having to modify SkillSystem and every class now has 
-one singular responsibility. 
+one singular responsibility. Also, the class SkillSystem now depends only on the interface ISkill rather than on concrete data as it was doing before.
+
