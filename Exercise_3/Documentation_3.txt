@@ -2,8 +2,6 @@ SOLID Principles Broken
 
 Liskov Substitution Principle
 
-Interface Segregation Principle
-
 
 Design Problem
 
